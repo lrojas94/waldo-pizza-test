@@ -19,7 +19,7 @@ class OrderOverview extends React.Component {
             return (
                 <li key={topping.name}>{topping.name}</li>
             );
-        });
+        }).filter(topping => !!topping); // Filter them to remove null ones.
     }
 
     renderRemoveItem(itemId) {
@@ -51,6 +51,8 @@ class OrderOverview extends React.Component {
                 id,
             } = pizzaItem;
 
+            const toppingItems = this.renderToppings(sizeDetails, selectedToppings);
+
             return (
                 <div key={id} className="order-overview__item">
                     <h3 className="order-overview-item__title">
@@ -59,7 +61,10 @@ class OrderOverview extends React.Component {
                     </h3>
                     <h4> Toppings </h4>
                     <ul className="order-overview-item__toppings">
-                        {this.renderToppings(sizeDetails, selectedToppings)}
+                        { toppingItems.length !== 0 && toppingItems }
+                        { toppingItems.length === 0 && (
+                            <li> This item has no toppings selected </li>
+                        ) }
                     </ul>
                     <div className="order-overview-item__final-cost">
                         Item Price: <span>${finalPrice}</span>

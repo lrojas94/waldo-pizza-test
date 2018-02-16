@@ -27,8 +27,12 @@ class Cart extends React.Component {
                 <h1> Your Shopping Cart </h1>
                 <br/>
                 <p> 
-                    Here you'll find all purchases you have prepared. Note that until you order them,
+                    Here you'll find pizzas you have prepared so far. Note that until you order them,
                     they will <strong> not </strong> in your Orders Page.
+                    <br/>
+                    <br/>
+                    You can remove items in case you don't want them anymore, but note that after you{'\''}ve 
+                    ordered them, there's no way to take them back.
                 </p>
                 <br/>
                 { renderOrderOverview && <OrderOverview order={cart} removeItemMethod={removeItemFromCart} /> }
