@@ -3,7 +3,14 @@ html {
     height: 100%;
     font-family: $font-open-sans;
     width: 100%;
-    background-color: $color-white;
+    background-color: $color-swan-white;
+    color: $color-carbon;
+}
+
+#root,
+#root > div,
+#root > div > div {
+    height: 100%;
 }
 
 h1,
@@ -14,4 +21,36 @@ h5,
 h6 {
     font-family: $font-lato;
     font-weight: 300;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.full-container {
+    min-height: $full-container;
+    padding-top: 1.5rem;
+}
+
+.info-message {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    background: $color-info-text;
+    color: $color-white;
+    padding: 1.5rem;
+    border-radius: 3px;
+
+    .info-message__title {
+        font-size: 2rem;
+        margin-bottom: 1.3rem;
+        }
+
+    .info-message__subtitle {
+        opacity: 0.65;
+    }
+}
+
+.button--red {
+    @include button($color-red);
 }

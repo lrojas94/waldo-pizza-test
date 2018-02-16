@@ -1,7 +1,7 @@
 
 .header {
     background-image: url('./img/pizza.jpg');
-    height: calc(450px - #{$nav-height});
+    height: $header-height;
     background-attachment: fixed;
     position: relative;
     overflow: hidden;

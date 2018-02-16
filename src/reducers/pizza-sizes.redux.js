@@ -14,8 +14,8 @@ const initialState = {
 
 export default handleActions({
     [FETCH_ALL_SIZES]: state => ({
-        isLoading: true,
         ...state,
+        isLoading: true,
     }),
     [FETCH_ALL_SIZES_SUCCESS]: (state, payload) => ({
         isLoading: false,

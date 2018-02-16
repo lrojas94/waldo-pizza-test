@@ -7,6 +7,8 @@
     color: $text-color;
     background-color: $color;
     transition: background 0.8s;
+    border: none;
+    cursor: pointer;
 
     &:hover,
     active {

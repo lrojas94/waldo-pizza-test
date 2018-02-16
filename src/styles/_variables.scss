@@ -4,6 +4,11 @@ $color-white: #f1f2f6;
 $color-carbon: #2f3640;
 $color-red: #ff5252;
 $nav-height: 4rem;
-
+$header-height: 35rem - $nav-height;
+$full-container: calc(100vh - #{$header-height + $nav-height});
 // Screen sizes:
 $max-sm-screen: 720px;
+$color-swan-white: #f7f1e3;
+$color-info: #dcdde1;
+$color-info-text: #40739e;
+$color-disabled: #7f8fa6;
