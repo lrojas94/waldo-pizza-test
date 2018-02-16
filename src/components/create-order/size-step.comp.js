@@ -109,7 +109,7 @@ class SizeStepComp extends React.Component {
         return (
             <div className="order__step order__step-1">
                 { isLoadingSizes && this.renderLoadingMessage()}
-                { availableSizes && availableSizes.length && this.renderAvailableSizesSelect()}
+                { availableSizes && availableSizes.length !== 0 && this.renderAvailableSizesSelect()}
                 { errorLoadingSizes && this.renderErrorLoading()}
             </div>
         );

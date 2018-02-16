@@ -14,7 +14,7 @@ export const addItemToCart = (pizzaItem) => (dispatch, getState) => {
         id: currentState.idCounter,
     });
 
-    dispatch(incrementIdCounter); // Ensure we get diff. ids for all items. 
+    dispatch(incrementIdCounter()); // Ensure we get diff. ids for all items. 
 };
 
 export const removeItemFromCart = (pizzaItemId) => dispatch => {

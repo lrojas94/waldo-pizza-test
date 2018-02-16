@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from './components/pages/home.comp';
 import CreateOrder from './containers/pages/create-order.cont';
+import Cart from './containers/pages/cart.cont';
 
 const App = () => (
   <div>
@@ -24,7 +25,7 @@ const App = () => (
     <main>
       <Route exact path="/" component={Home} />
       <Route exact path="/order" component={CreateOrder} />
-      <Route exact path="/cart" component={CreateOrder} />
+      <Route exact path="/cart" component={Cart} />
     </main>
   </div>
 )

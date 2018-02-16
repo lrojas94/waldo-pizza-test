@@ -110,7 +110,7 @@ class DetailsStepComp extends React.Component {
             /**
              * Useful to avoid re-computation on the cart. 
              */
-            finalPrice: calculateTotalPriceOfPizzaItem({ sizeDetails, selectedToppings }),
+            finalPrice: calculateTotalPriceOfPizzaItem({ sizeDetails, selectedToppings }).toFixed(2),
         }); 
     }
 
@@ -222,7 +222,7 @@ class DetailsStepComp extends React.Component {
                     className="button--red" 
                     onClick={ this.onNextStep }
                 > 
-                    Place my order
+                    Add Item To Cart
                 </button>
             </div>
         )
