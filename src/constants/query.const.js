@@ -1,23 +1,27 @@
-export const PIZZA_SIZES = `
-{
-    pizzaSizes: {
-        name,
-        basePrice,
-    }
-}`;
+import gql from 'graphql-tag';
 
-export const PIZZA_BY_SIZE_NAME = `
-{
-    pizzaSizeByName(name="small") {
-        name
-        basePrice,
-        maxToppings,
-        toppings {
-    	    defaultSelected,
-            topping{
-                name,
-                price,
-            },
-  	    }
-  }
-}`;
+export const PIZZA_SIZES = gql`
+    {
+        pizzaSizes {
+            name,
+            basePrice,
+        }
+    }
+`;
+
+export const PIZZA_BY_SIZE_NAME = gql`
+    {
+        pizzaSizeByName(name: "small") {
+            name
+            basePrice,
+            maxToppings,
+            toppings {
+                defaultSelected,
+                topping {
+                    name,
+                    price,
+                },
+            }
+        }
+    }
+`;
