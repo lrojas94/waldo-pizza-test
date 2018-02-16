@@ -8,23 +8,23 @@ import {
 
 const initialState = {
     isLoading: false,
-    size: null,
+    details: null,
     error: null,
 };
 
 export default handleActions({
     [FETCH_SIZE]: state => ({
-        isLoading: true,
         ...state,
+        isLoading: true,
     }),
     [FETCH_SIZE_SUCCESS]: (state, payload) => ({
         isLoading: false,
         error: null, // Clear out any errors.
-        size: payload.size,
+        details: payload.details,
     }),
     [FETCH_SIZE_ERROR]: (state, payload) => ({
         isLoading: false,
         error: payload.error,
-        size: [], // Clear out all size info...
+        details: null, // Clear out all size info...
     }),
 }, initialState);

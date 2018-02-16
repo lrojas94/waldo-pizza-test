@@ -14,22 +14,23 @@ export const fetchSizeByName = (name) => async dispatch => {
     dispatch({
         type: FETCH_SIZE, // This should trigger a loading state.
     });
-
+    
     try {
         const queryResult = await client.query({
             query: PIZZA_BY_SIZE_NAME,
             variables: {
-                name,
+                name: name,
             },
         });
 
-        const { data: { pizzaSizes }  } = queryResult;
+        const { data: { pizzaSizeByName }  } = queryResult;
+
         dispatch({
             type: FETCH_SIZE_SUCCESS,
-            pizzaSizes,
+            details: pizzaSizeByName,
         });
     } catch (err) {
-        console.log(err); // There was an error... ehre
+        console.log(err); // There was an error... here
         dispatch({
             type: FETCH_SIZE_ERROR,
             error: err,

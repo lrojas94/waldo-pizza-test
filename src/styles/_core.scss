@@ -5,6 +5,7 @@ html {
     width: 100%;
     background-color: $color-swan-white;
     color: $color-carbon;
+    text-align: center;
 }
 
 #root,
@@ -25,6 +26,11 @@ h6 {
 
 div {
     box-sizing: border-box;
+}
+
+strong {
+    font-weight: 700;
+    color: black;
 }
 
 .full-container {

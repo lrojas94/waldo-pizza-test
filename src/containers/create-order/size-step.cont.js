@@ -1,4 +1,3 @@
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SizeStep from '../../components/create-order/size-step.comp';
 import {
@@ -11,9 +10,9 @@ const mapStateToProps = state => ({
     errorLoadingSizes: state.pizzaSizes.error,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    fetchSizes: () => dispatch(fetchAllSizes),
-}, dispatch);
+const mapDispatchToProps = dispatch => ({
+    fetchSizes: () => dispatch(fetchAllSizes()),
+});
 
 export default connect(
     mapStateToProps,

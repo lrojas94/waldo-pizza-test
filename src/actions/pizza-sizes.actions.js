@@ -11,7 +11,6 @@ import {
 } from '../constants/query.const';
 
 export const fetchAllSizes = () => async dispatch => {
-    console.log('fetchAllSizes :: Fetching....');
     dispatch({
         type: FETCH_ALL_SIZES, // This should trigger a loading state.
     });
@@ -21,7 +20,6 @@ export const fetchAllSizes = () => async dispatch => {
         const queryResult = await client.query({
             query: PIZZA_SIZES,
         });
-        console.log('fetchAllSizes :: Fetching Success!');
 
         const { data: { pizzaSizes }  } = queryResult;
         dispatch({

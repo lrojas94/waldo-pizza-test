@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const PIZZA_SIZES = gql`
-    {
+    query pizzaSizes {
         pizzaSizes {
             name,
             basePrice,
@@ -10,8 +10,8 @@ export const PIZZA_SIZES = gql`
 `;
 
 export const PIZZA_BY_SIZE_NAME = gql`
-    {
-        pizzaSizeByName(name: "small") {
+    query pizzaSizeByName($name: PizzaSizes) {
+        pizzaSizeByName(name: $name) {
             name
             basePrice,
             maxToppings,
