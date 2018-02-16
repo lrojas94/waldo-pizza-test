@@ -170,7 +170,7 @@ class DetailsStepComp extends React.Component {
                         type="checkbox" 
                         onChange={() => this.toggleTopping(topping.name)} 
                         id={topping.name} 
-                        checked={selectedToppings[topping.name]}
+                        checked={!!selectedToppings[topping.name]}
                     /> 
                     <label htmlFor={topping.name}>{topping.name} (Price: <strong>${topping.price}</strong>)</label>
                 </div>
