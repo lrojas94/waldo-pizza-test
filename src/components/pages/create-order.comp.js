@@ -6,7 +6,6 @@ import DetailsStep from '../../containers/create-order/details-step.cont';
 
 const SIZE_SELECTION = 1;
 const DETAILS_SELECTION = 2;
-const PLACE_ORDER = 3;
 
 class CreateOrder extends React.Component {
     static propTypes = {
@@ -26,7 +25,6 @@ class CreateOrder extends React.Component {
 
         const {
             addItemToCart,
-            push,
         } = this.props;
 
         switch(currentStep) {
@@ -41,7 +39,9 @@ class CreateOrder extends React.Component {
             case DETAILS_SELECTION: 
                 const pizzaItem = data;
                 addItemToCart(pizzaItem);
+            break;
             default: 
+                console.log('No idea what step I\'m in now... xD');
             break;
         }
     };

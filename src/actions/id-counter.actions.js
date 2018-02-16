@@ -1,5 +1,3 @@
-import { client } from '../services/apollo.service';
-
 import {
     INCREMENT_ID_COUNTER,
 } from '../constants/actions.const'

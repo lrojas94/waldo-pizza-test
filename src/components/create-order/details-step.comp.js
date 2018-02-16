@@ -134,7 +134,6 @@ class DetailsStepComp extends React.Component {
 
     renderDetails() {
         const { sizeDetails } = this.props;
-        const { selectedToppings } = this.state;
 
         return (
             <div className="order__step-2">
@@ -204,11 +203,8 @@ class DetailsStepComp extends React.Component {
 
     renderNavigation() {
         const { 
-            onNextStep,
             onPrevStep,
         } = this.props;
-
-        const { selectedSize } = this.state;
 
         return (
             <div className="order__change-steps">

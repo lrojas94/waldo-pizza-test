@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { removeItemFromCart } from '../../actions/cart.actions';
 import { calculateOrderTotal } from '../../util/util';
+
 class OrderOverview extends React.Component {
     static propTypes = {
         order: PropTypes.array.isRequired,

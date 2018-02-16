@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     removeItemFromCart: itemId => dispatch(removeItemFromCart(itemId)),
     placeOrder: () => {
-        dispatch(completeOrder()),
+        dispatch(completeOrder());
         dispatch(push('/')); // Move to orders.
     }
 });
