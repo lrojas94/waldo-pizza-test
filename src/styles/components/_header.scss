@@ -1,0 +1,60 @@
+
+.header {
+    background-image: url('./img/pizza.jpg');
+    height: calc(450px - #{$nav-height});
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    z-index: 0;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding: 0 1rem;
+    * {
+        text-align: center;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
+
+    .header__title {
+        font-size: 3.5rem;
+        color: $color-white;
+        font-weight: 100;
+        margin-bottom: 0.7rem;
+    }
+
+    .header__subtitle {
+        font-size: 1.5rem;
+        font-family: $font-open-sans;
+        color: $color-white;
+    }
+
+    .header__button {
+        @include button($color-red);
+        width: 8rem;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    @media screen and (max-width: $max-sm-screen) {
+        .header__title {
+            font-size: 2.5rem;
+        }
+
+        .header__subtitle {
+            font-size: 1rem;
+        }
+        
+    }
+}

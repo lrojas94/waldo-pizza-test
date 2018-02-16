@@ -1,0 +1,15 @@
+
+@mixin button($color, $text-color: $color-white, $lighten-percent: 10%) {
+    line-height: 3rem;
+    height: 3rem;
+    padding: 0 0.8rem;
+    text-decoration: none;
+    color: $text-color;
+    background-color: $color;
+    transition: background 0.8s;
+
+    &:hover,
+    active {
+        background-color: lighten($color, $lighten-percent);
+    }
+}

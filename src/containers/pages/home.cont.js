@@ -1,9 +1,9 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import CreateOrder from '../../components/pages/create-order.comp';
+import Home from '../../components/pages/home.comp';
 
 const mapStateToProps = state => ({
-    idCounter: state.idCounter,
+    orders: state.orders,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(CreateOrder);
+)(Home);

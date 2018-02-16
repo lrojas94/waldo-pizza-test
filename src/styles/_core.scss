@@ -1,0 +1,17 @@
+body,
+html {
+    height: 100%;
+    font-family: $font-open-sans;
+    width: 100%;
+    background-color: $color-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-lato;
+    font-weight: 300;
+}
