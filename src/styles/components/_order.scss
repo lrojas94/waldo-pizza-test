@@ -35,6 +35,7 @@
         flex-basis: 50%;
         text-transform: uppercase;
         font-weight: 700;
+        margin: 5px;
 
         &:disabled {
             background: $color-disabled;

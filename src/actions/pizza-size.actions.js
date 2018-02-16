@@ -1,14 +1,10 @@
-import { client } from '../services/apollo.service';
+import { findBySizeName } from '../services/apollo.service';
 
 import {
     FETCH_SIZE,
     FETCH_SIZE_SUCCESS,
     FETCH_SIZE_ERROR,
-} from '../constants/actions.const'
-
-import {
-    PIZZA_BY_SIZE_NAME,
-} from '../constants/query.const';
+} from '../constants/actions.const';
 
 export const fetchSizeByName = (name) => async dispatch => {
     dispatch({
@@ -16,12 +12,7 @@ export const fetchSizeByName = (name) => async dispatch => {
     });
     
     try {
-        const queryResult = await client.query({
-            query: PIZZA_BY_SIZE_NAME,
-            variables: {
-                name: name,
-            },
-        });
+        const queryResult = await findBySizeName(name);
 
         const { data: { pizzaSizeByName }  } = queryResult;
 

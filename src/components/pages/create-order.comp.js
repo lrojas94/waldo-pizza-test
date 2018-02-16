@@ -9,6 +9,10 @@ const DETAILS_SELECTION = 2;
 const PLACE_ORDER = 3;
 
 class CreateOrder extends React.Component {
+    static propTypes = {
+        addItemToCart: PropTypes.func.isRequired,
+    };
+
     state = {
         currentStep: SIZE_SELECTION,
         selectedSize: null,
@@ -20,6 +24,11 @@ class CreateOrder extends React.Component {
             currentStep,
         } = this.state;
 
+        const {
+            addItemToCart,
+            push,
+        } = this.props;
+
         switch(currentStep) {
             case SIZE_SELECTION: 
                 const selectedSize = data; // This is data in this case.
@@ -29,9 +38,10 @@ class CreateOrder extends React.Component {
                     selectedSize,
                 });
             break;
-            
+            case DETAILS_SELECTION: 
+                const pizzaItem = data;
+                addItemToCart(pizzaItem);
             default: 
-                console.log('Oh Well...');
             break;
         }
     };
@@ -50,7 +60,6 @@ class CreateOrder extends React.Component {
             break;
             
             default: 
-                console.log('Oh Well...');
             break;
         }
     };

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { calculateTotalPriceOfPizzaItem } from '../../util/util';
 
 class DetailsStepComp extends React.Component {
     static propTypes = {
@@ -90,8 +91,27 @@ class DetailsStepComp extends React.Component {
     }
 
     onNextStep = () => {
-        const { onNextStep } = this.props;
+        const {
+            onNextStep,
+            sizeDetails,
+        } = this.props;
+        
+        const {
+            selectedToppings,
+        } = this.state;
 
+        onNextStep({
+            /**
+             * As mentioned in the project desc. prices might change, however, if I placed an order 
+             * at some price X, that shouldn't change. Here is to keep all the info,
+             */
+            sizeDetails,
+            selectedToppings,
+            /**
+             * Useful to avoid re-computation on the cart. 
+             */
+            finalPrice: calculateTotalPriceOfPizzaItem({ sizeDetails, selectedToppings }),
+        }); 
     }
 
     renderLoadingMessage() {
@@ -169,14 +189,7 @@ class DetailsStepComp extends React.Component {
             selectedToppings,
         } = this.state;
 
-        // Sum it all :)
-        let total = sizeDetails.basePrice;
-        sizeDetails.toppings.forEach(toppingItem => {
-            const { topping } = toppingItem;
-            if(selectedToppings[topping.name]) {
-                total += topping.price;
-            }
-        });
+        const total = calculateTotalPriceOfPizzaItem({ sizeDetails, selectedToppings });
 
         return (
             <div className="order-step-2__total">
@@ -209,7 +222,7 @@ class DetailsStepComp extends React.Component {
                     className="button--red" 
                     onClick={ this.onNextStep }
                 > 
-                    Continue
+                    Place my order
                 </button>
             </div>
         )
