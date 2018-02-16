@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 import idCounter from './id-counter.redux';
 import cart from './cart.redux';
+import orders from './order.redux';
 import pizzaSizes from './pizza-sizes.redux';
 import pizzaSize from './pizza-size.redux';
 
@@ -11,4 +12,5 @@ export default combineReducers({
     cart,
     pizzaSizes,
     pizzaSize,
+    orders,
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { removeItemFromCart } from '../../actions/cart.actions';
-
+import { calculateOrderTotal } from '../../util/util';
 class OrderOverview extends React.Component {
     static propTypes = {
         order: PropTypes.array.isRequired,
@@ -75,11 +75,8 @@ class OrderOverview extends React.Component {
             order,
         } = this.props;
 
-        let total = order.reduce((acc, val) => {
-            return parseFloat(acc) + parseFloat(val.finalPrice);
-        }, 0);
-
-        total = parseFloat(total).toFixed(2);
+        const total = calculateOrderTotal(order);
+        
         return (
             <div className="order-overview__total">
                 Total Price for this order is: ${total}

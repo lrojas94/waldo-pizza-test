@@ -3,6 +3,7 @@ import { handleActions } from 'redux-actions';
 import {
     ADD_ITEM_TO_CART,
     REMOVE_ITEM_FROM_CART,
+    CLEAR_CART,
 } from '../constants/actions.const';
 
 /**
@@ -45,4 +46,9 @@ export default handleActions({
             ...state.slice(indexOfItem + 1),
         ];
     },
+    
+    [CLEAR_CART]: () => {
+        return [];
+    },
+    
 }, initialState);

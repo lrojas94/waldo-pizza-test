@@ -14,3 +14,13 @@ export const calculateTotalPriceOfPizzaItem = ({ sizeDetails, selectedToppings }
 
     return total;
 };
+
+export const calculateOrderTotal = (order) => {
+    let total = order.reduce((acc, pizzaItem) => {
+        return parseFloat(acc) + parseFloat(pizzaItem.finalPrice);
+    }, 0);
+
+    total = parseFloat(total).toFixed(2);
+
+    return total;
+}

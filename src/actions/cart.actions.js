@@ -1,6 +1,7 @@
 import {
     ADD_ITEM_TO_CART,
     REMOVE_ITEM_FROM_CART,
+    CLEAR_CART,
 } from '../constants/actions.const'
 
 import { incrementIdCounter } from './id-counter.actions';
@@ -23,3 +24,9 @@ export const removeItemFromCart = (pizzaItemId) => dispatch => {
         pizzaItemId,
     });
 };
+
+export const clearCart = () => dispatch => {
+    dispatch({
+        type: CLEAR_CART,
+    });
+}

@@ -8,3 +8,5 @@ export const FETCH_ALL_SIZES_ERROR = 'FETCH_ALL_SIZES_ERROR';
 export const FETCH_SIZE = 'FETCH_SIZE'; 
 export const FETCH_SIZE_SUCCESS = 'FETCH_SIZE_SUCCESS'; 
 export const FETCH_SIZE_ERROR = 'FETCH_SIZE_ERROR'; 
+export const COMPLETE_ORDER = 'COMPLETE_ORDER'; 
+export const CLEAR_CART = 'CLEAR_CART'; 

@@ -155,3 +155,24 @@
         text-transform: uppercase;
     }
 }
+
+.order {
+    h3 {
+        margin-bottom: 1.2rem;
+    }
+}
+
+.your-orders {
+    padding-bottom: 1rem;
+    border-bottom: 5px solid $color-carbon;
+    margin-bottom: 1rem;
+}
+
+.order-item {
+    cursor: pointer;
+    padding: 1rem 0;
+    transition: all 0.5s;
+    &:hover {
+        background: darken($color-swan-white, 10%);
+    }
+}
