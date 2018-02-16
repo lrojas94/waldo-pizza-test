@@ -78,7 +78,11 @@ class SizeStepComp extends React.Component {
     }
 
     renderErrorLoading() {
-        return null;
+        return (
+            <div>
+                There was an error loading Pizza Sizes... Please try again later...
+            </div>
+        );
     }
 
     renderNext() {
@@ -109,8 +113,8 @@ class SizeStepComp extends React.Component {
         return (
             <div className="order__step order__step-1">
                 { isLoadingSizes && this.renderLoadingMessage()}
-                { availableSizes && availableSizes.length !== 0 && this.renderAvailableSizesSelect()}
-                { errorLoadingSizes && this.renderErrorLoading()}
+                { !isLoadingSizes && availableSizes && availableSizes.length !== 0 && this.renderAvailableSizesSelect()}
+                { !isLoadingSizes && errorLoadingSizes && this.renderErrorLoading()}
             </div>
         );
     }

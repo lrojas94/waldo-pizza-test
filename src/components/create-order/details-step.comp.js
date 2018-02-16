@@ -198,7 +198,11 @@ class DetailsStepComp extends React.Component {
     }
 
     renderErrorLoading() {
-        return null;
+        return (
+            <div>
+                There was an error loading Details... Please try again later...
+            </div>
+        );
     }
 
     renderNavigation() {
@@ -235,7 +239,7 @@ class DetailsStepComp extends React.Component {
         return (
             <div className="order__step order__step-1">
                 { isLoadingSize && this.renderLoadingMessage()}
-                { sizeDetails && this.renderDetails() }
+                { !isLoadingSize && sizeDetails && this.renderDetails() }
                 { errorLoadingSizes && this.renderErrorLoading()}
             </div>
         );
